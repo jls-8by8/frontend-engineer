@@ -87,7 +87,38 @@
           curling shot into the top corner. The stadium erupted in cheers, and
           one could feel the energy shift definitively in Inter Miami's favor.
         </p>
+        <div style="text-align: center">
+          <button
+            onclick="changeVideoSource('https://storage.googleapis.com/8by8-us-public/interview1.mp4')"
+          >
+            Video 1
+          </button>
+          <button
+            onclick="changeVideoSource('https://storage.googleapis.com/8by8-us-public/interview2.mp4')"
+          >
+            Video 2
+          </button>
+          <button
+            onclick="changeVideoSource('https://storage.googleapis.com/8by8-us-public/interview3.mp4')"
+          >
+            Video 3
+          </button>
+        </div>
+
+        <video controls width="80%" style="display: block; margin: 0 auto">
+          <source src="" type="video/mp3" />
+          Your browser does not support the video tag.
+        </video>
       </div>
     </section>
+    <script>
+      function changeVideoSource(src) {
+        const video = document.getElementById("video");
+        let source = video.querySelector("source");
+        source.setAttribute("src", src);
+        video.load();
+        video.play();
+      }
+    </script>
   </body>
 </html>
